@@ -78,7 +78,7 @@
 						<p>
 							<img src="./images/pp-weblogo.png" style="max-width: 50%; max-height: 50%; border: none; box-shadow: none;" />
 						</p>
-						<strong>October 18th at the Convetion Center</strong>
+						<strong>October 18th at the Convention Center</strong>
 					</section>								
 				</section>	
 
@@ -150,7 +150,6 @@
 					<p class="fragment">Or atleast their ratios.</p>
 				</section>
 				<section>
-					<h2>W3C Size Relationships</h2>
 					<table class="data">
 						
 					    <thead>
@@ -228,242 +227,361 @@
 				<section>
 					<section>
 						<h3>And here is where things get really skrewed up</h3>
-						<p class="fragment">1in in css ≠ 1in in real life. (mostly)</p>
+						<p class="fragment">An inch doens't always equal an inch:</p>
+						<p class="fragment">Pixels are dependant on the size of the "inch"</p>
+						<p class="fragment">or an "inch" are relative to a pixel.</p>
+					</section>
+					<section data-background="http://i.giphy.com/4fsaueq5lCV4A.gif">
+						<h3>Lo-Res Screens</h3>
 					</section>
 					<section>
-						<h3>And here is where things get really skrewed up</h3>
-						<p class="fragment">1in in css ≠ 1in in real life. (mostly)</p>
+						<p class="fragment">The unit "px" is reference to a physical pixel</p>
+						<p class="fragment">so an inch is 96 reference pixels in size<br/></p>
+						<p class="fragment">and all other absolute length units adjust accordingly</p>
+					</section>
+					<section data-transition="zoom" data-background="http://i.giphy.com/e7FOBuKCDtwWI.gif">
+						<h3>Hi-Res Screens or Physical item</h3>
+					</section>					
+					<section>
+						<p class="fragment">The "inch" is defined by its physical size, so...</p>
+						<p class="fragment">an inch is an inch</p>
+						<p class="fragment">a pixel is 1 / 96th of an inch</p>
+						<p class="fragment">a point is 1 / 72th of an inch</p>
+						<p class="fragment">and a pica is 1 / 6th of an inch</p>
+						<small class="fragment">Just like the APS or DPS</small>
+					</section>			
+				</section>		
+
+				<section>
+					<h2>And this is just 1 type of unit size</h2>
+					<h2 class="fragment">of 6.</h2>
+					<p class="fragment">Don't worry, most are digital constructions.</p>
+				</section>
+
+				<section>
+					<section data-background="http://i.giphy.com/Nrwd82CALDeRW.gif">
+						<h2 style="color: #000;">Relative Lengths</h2>
+					</section>
+					<section>
+						<h3>There are 2 types:</h3>
+						<p class="fragment">Font-relative Lengths</p>
+						<p class="fragment">Viewport-percentage Lengths</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Font-relative Lengths</h2>
+						<p class="fragment">EM, REM<sup>*</sup>, CH, EX</p>
+						<p class="fragment">All except for REM's are relative to the font metric of the element they are applied to</p>
+					</section>
+					<section>
+						<table class="data">
+						    
+							
+						    <thead>
+								
+						     <tr>
+						      <th>unit
+						      </th><th>relative to
+							
+						    
+							
+						    </th></tr></thead><tbody>
+								
+						     <tr>
+						      <td><span class="css">em</span>
+								    
+						      </td><td>font size of the element
+								
+						     </td></tr><tr>
+						      <td><span class="css">ex</span>
+								    
+						      </td><td>x-height of the element’s font
+								
+						     </td></tr><tr>
+						      <td><span class="css">ch</span>
+								    
+						      </td><td>width of the "0" (ZERO, U+0030) glyph in the element’s font
+								
+						     </td></tr><tr>
+						      <td><span class="css">rem</span>
+								    
+						      </td><td>font size of the root element
+								
+						    </td></tr></tbody></table>
+						    <aside class="notes">give examples of each one</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Viewport-relative Lengths</h2>
+						<p class="fragment">VH, VW, VMIN, VMAX</p>
+					</section>
+					<section>
+						<table class="data">
+						    <thead>
+								
+						     <tr>
+						      <th>unit
+						      </th><th>relative to
+							
+						    
+							
+						    </th></tr></thead><tbody>
+								<tr>
+						      <td><span class="css">vw</span>
+								    
+						      </td><td>1% of viewport’s width
+								
+						     </td></tr><tr>
+						      <td><span class="css">vh</span>
+								    
+						      </td><td>1% viewport’s height
+								
+						     </td></tr><tr>
+						      <td><span class="css">vmin</span>
+								    
+						      </td><td>1% of viewport’s smaller dimension
+								
+						     </td></tr><tr>
+						      <td><span class="css">vmax</span>
+								    
+						      </td><td>1% of viewport’s larger dimension
+							
+						    
+							
+						   </td></tr></tbody></table>
+						   <aside class="notes">vw unit
+Equal to 1% of the width of the initial containing block.
+In the example below, if the width of the viewport is 200mm, the font size of h1 elements will be 16mm (i.e. (8×200mm)/100).
+h1 { font-size: 8vw }
+vh unit
+Equal to 1% of the height of the initial containing block.
+vmin unit
+Equal to the smaller of vw or vh.
+vmax unit
+Equal to the larger of vw or vh.
+						</aside>
+					</section>
+				</section>				
+				<section>
+					<h3>So now that we know all that</h3>
+					<p class="fragment">Can we all agree that these absolute units of size are actually pretty terrible for web. But great for print.</p>
+					<p class="fragment">That aside: lets go over some examples</p>
+				</section>					
+				<section>
+					<section>
+						<h3>Where pixels and the like break down for web</h3>
+						<pre class="fragment">@media all and (min-width: 768px)</pre>
+						<p> ≠ </p>
+						<pre class="fragment">@media all and (min-width: 48em)</pre>
+						<p class="fragment">Let me explain why</p>
+					</section>
+					<section>
+						<h3>@media all and (min-width: 768px)</h3>
+						<p class="fragment">Will still = true if you increase your browser magnification (read font size)</p>
+						<p class="fragment">Because the actual number of pixels of the window haven't changed in relation to the font size increase</p>
+					</section>				
+					<section>
+						<h3>@media all and (min-width: 48em)</h3>
+						<p class="fragment">Won't.</p>
+						<p class="fragment">Because the actual number of EM's of screen real estate across the screen won't evaluate to true if you increase the font size.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>EM's vs REM's</h2>
+						<p class="fragment">Why you should care about the difference</p>
+						<p class="fragment">EM's are relative to the font size of the element or the last parent element with a specified font size</p>
+						<p class="fragment">As you increase the font size, all other EM measurements increase proportionally</p>
+						<aside class="notes">Which is great when you want to maintain padding, borders, image sizes relative to a single element</aside>
+					</section>
+					<section>
+						<h2>REM's? <br /><small>The red-headed step child</small></h2>
+						<p class="fragment">Are relational in size to the root elements size (ie HTML tag)</p>
+						<p class="fragment">Meaning if you increase the font size of the text, the padding of the element will still be the same and its overall size will be as well... just with bigger letters in it.</p>
+					</section>
+					<section>
+						<h2>It all comes down to inheritance</h2>
+						<p>Each have a use case, depending on how you want things to inherit sizing</p>
+						<p class="fragment">Or weird fonts.</p>
+						<p class="fragment">Or better yet multiple fonts with different baseline sizes.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Viewport relative sizing</h3>
+						<p class="fragment">Really sweet units that gets no love</p>
+						<p class="fragment">Only thing missing is IE8 support</p>
+						<p class="fragment">But VH and VW are supported on IE9 forward</p>
 					</section>					
 				</section>
 				<section>
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">ems/rems are meaningful self-determined measurements, while px are an unrelated external abstraction that probably defy conventions</p>&mdash; Damon Muma (@thedamon) <a href="https://twitter.com/thedamon/status/644894284433326080">September 18, 2015</a></blockquote>
+					<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">ems/rems are meaningful self-determined measurements, while px are an unrelated external abstraction that probably defy conventions</p>&mdash; Damon Muma (@thedamon) <a href="https://twitter.com/thedamon/status/644894284433326080">September 18, 2015</a></blockquote>
 <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">it&#39;s like measuring a new table leg w a ruler vs measuring it against the rest of the table like they did in the old days</p>&mdash; Damon Muma (@thedamon) <a href="https://twitter.com/thedamon/status/644894540306890752">September 18, 2015</a></blockquote>
-				</section>
-
-
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
+				</section>				
 				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+					<section data-background="http://i.giphy.com/11FRmJRii0I8iA.gif">
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
+					<section>
+						<h2>There's more!</h2>
+						<p class="fragment">Remember how I said there was a total of 6 unit lengths?</p> 
+						<p class="fragment">Here are the other types</p>
 					</section>
 				</section>
+				<section>
+					<section data-background="http://i.giphy.com/pRqK2YcBYQp0s.gif">
+						<h3>Angle Units</h3>
+					</section>
+					<section>
+						<h3>Different ways of measuring a circle</h3>
+						<table class="data fragment">
+						    <thead>
+								
+						     <tr>
+						      <th>unit
+						      </th><th>dimensions
+							
+						    
+							
+						    </th></tr></thead><tbody>
+								<tr>
+						      <td><span class="css">deg</span>
+								    
+						      </td><td>360 degree's in a cirlce
+								
+						     </td></tr><tr>
+						      <td><span class="css">grad</span>
+								    
+						      </td><td>400 gradians (grades) in a cirlce
+								
+						     </td></tr><tr>
+						      <td><span class="css">rad</span>
+								    
+						      </td><td>2π radians in a full circle
+								
+						     </td></tr><tr>
+						      <td><span class="css">turn</span>
+								    
+						      </td><td>1 turn in a full circle.
+							
+						    
+							
+						   </td></tr></tbody></table>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+					</section>
 				</section>
+				<section>
+					<section data-background="http://i.giphy.com/M9zaOuiElVvTG.gif">
+						<h3>Duration Units</h3>
+					</section>
+					<section>
+						<h3>Different ways of measuring time</h3>
+						<table class="data fragment">
+						    <thead>
+								
+						     <tr>
+						      <th>unit
+						      </th><th>dimensions
+							
+						    
+							
+						    </th></tr></thead><tbody>
+								<tr>
+						      <td><span class="css">s</span>
+								    
+						      </td><td>Seconds
+								
+						     </td></tr><tr>
+						      <td><span class="css">ms</span>
+								    
+						      </td><td>Milliseconds - 1000 per second
+								
+						     </td></tr></tbody></table>
 
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+					</section>
 				</section>
+				<section>
+					<section data-background="http://i.giphy.com/12Yf5CuhUpjDG0.gif">
+						<h3 style="color: #000;">Frequency Units<sup>*</sup></h3>
+						<p class="fragment" style="color: #000;">They are in CSS3, but nothing currently uses them.</p>
+					</section>	
+					<section>
+						<table>
+						    <thead>
+								
+						     <tr>
+						      <th>unit
+						      </th><th>dimensions
+							
+						    
+							
+						    </th></tr></thead><tbody>
+								<tr>
+						      <td><span class="css">Hz</span>
+								    
+						      </td><td>Number of occurrences per second.
+								
+						     </td></tr><tr>
+						      <td><span class="css">kHz</span>
+								    
+						      </td><td>1000 Hz
+								
+						     </td></tr></tbody></table>
+
+					</section>
+				</section>
+				<section>
+					<section data-background="http://i.giphy.com/Eg7Zder9Vj89q.gif">
+						<h3 style="background-color:#000;">Resolution Units</h3>
+					</section>	
+					<section>
+						<h3>Different ways of measuring resolution</h3>
+						<p class="fragment">Representing how many dots fit in a CSS PX, IN, or CM.</p>
+						<table class="data fragment">
+						    <thead>
+								
+						     <tr>
+						      <th>unit
+						      </th><th>dimensions
+							
+						    
+							
+						    </th></tr></thead><tbody>
+								<tr>
+						      <td><span class="css">DPI</span>
+								    
+						      </td><td>Dots per inch
+								
+						     </td></tr><tr>
+						      <td><span class="css">DPCM</span>
+								    
+						      </td><td>Dots per cm
+								
+						     </td></tr><tr>
+						      <td><span class="css">DPPX</span>
+								    
+						      </td><td>Dots per 'px unit'
+								
+						     </td></tr></tbody></table>
+
+					</section>
+					<section>
+						<h2>Dots per px unit?</h2>
+						<p class="fragment">Remember in CSS 1in = 96px</p>
+						<p class="fragment">ish</p>
+						<p class="fragment">So...</p>
+						<pre class="fragment">@media all and (min-resolution: 2dppx)</pre> 
+						<p class="fragment">Would target devices with a resolution higher than 'normal' 96 DPI or 1DPPX</p>
+					</section>					
+				</section>				
 
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+					<h2>Q/A &amp; Discussion</h2>
 				</section>
-
 				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
+					<h1>It's not the <i>size unit</i> that counts...</h1>
+				</section>				
 				<section style="text-align: left;">
 					<h1>...It's how you use it.</h1>
 				</section>
