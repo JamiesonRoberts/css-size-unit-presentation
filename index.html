@@ -51,51 +51,159 @@
 				</section>
 				<section>
 					<section>
-						<h2>What is Atomic Design</h2>
-						<p class="fragment">Atomic design is methodology for creating design systems,</p>
-						<p class="fragment">or, in our case a way of structuring our systems of components.</p>
+						<h2>What Atomic is not</h2>
+						<p class="fragment">Its not a framework, naming convention, boilerplate, etc.</p>
+						<p class="fragment">IE - BEM, OOCSS, Bootstrap</p>
+					</section>
+				</section>				
+				<section>
+					<section>
+						<h2>What Atomic is</h2>
+						<p class="fragment">Atomic design is methodology for organizing and creating systems</p>
+						<p class="fragment">or, in our case a way of structuring our components and what influces what.</p>
+						<p class="fragment">Forces you to think about levels of inheritance, and how larger elements interact with smaller elements</p>
+						<p class="fragment">Each level should be standalone</p>						
+					</section>
+				</section>						
+				<section>
+					<section data-background="images/periodicelements.png">
 					</section>
 				</section>
-
 				<section>
 					<section data-background="http://i.giphy.com/tAPkUnA2GQNVK.gif">
 						<h2 style="text-align:left; ">Atoms</h2>
 					</section>
 				</section>
-
+				<section>
+					<section>
+						<h3>Like matter, basic building blocks of a website.</h3>
+						<p class="fragment">Doesn't mean you need to have a partial for each html element tag</p>
+						<p class="fragment">Infact you probably shouldn't.</p>
+						<p class="fragment">Grid, typography, forms, animations, normalize, etc</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Example</h3>
+						<p class="fragment">input, label, title</p>
+						<img class="fragment" src="images/atoms.jpg" style="max-height:400px;" />
+					</section>
+				</section>
 				<section>
 					<section data-background="http://i.giphy.com/TGSRCWchJ6eSQ.gif">
 						<h2 style="text-align:right; ">Molecules</h2>
 					</section>
 				</section>
-
+				<section>
+					<section>
+						<h3>Smallest fundamental units of a site</h3>
+						<p class="fragment">Deals with the interaction of atoms and creates a small standalone object</p>
+						<p class="fragment">Should be quickly testable and deal with some responsive</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Example</h3>
+						<p class="fragment">A search form with a title.</p>
+						<img class="fragment" src="images/molecule.jpg" style="max-height:400px;" />
+					</section>
+				</section>
 				<section>
 					<section data-background="http://i.giphy.com/R04wdo1uYgkJa.gif">
 						<h2 style="text-align:left; color:#000; ">Organisms</h2>
 					</section>
 				</section>
+				<section>
+					<section>
+						<h3>Group of molecules</h3>
+						<p class="fragment">Its a group that are joined together and form a relativly complex distinct section of an interface</p>
+						<p class="fragment">Can contain disparate molecules, or the same one repeated</p>
+						<p class="fragment">Header, footer, section</p>
+						<p class="fragment">Should be fully responsive</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Example</h3>
+						<p class="fragment">A header with a logo, navigation, and search bar</p>
+						<img class="fragment" src="images/organism2.jpg" style="max-height:400px;" />
+					</section>
+				</section>						
 
 				<section>
 					<section data-background="http://i.giphy.com/yoJC2k4dPDRSInYfjq.gif">
 						<h2 style="text-align:right; color:#000; ">Templates</h2>
 					</section>
 				</section>
+				<section>
+					<section>
+						<h3>Group of organisms AKA a wireframe</h3>
+						<p class="fragment">Workable interface</p>
+						<p class="fragment">Deals with the interaction of organisms</p>
+						<p class="fragment">Should incorporate all the ideas of the previous levels</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Example</h3>
+						<p class="fragment">A wireframe with/without placeholders</p>
+						<img class="fragment" src="images/template1.jpg" style="max-height:400px;" />
+					</section>
+				</section>					
 
 				<section>
 					<section data-background="http://i.giphy.com/4PGydrBPTg4Yo.gif">
 						<h3 style="color:#000; padding-top:20px; text-align:left; margin-left:-10%;"><br><br><br><br><span class="fragment">P</span><span class="fragment">a</span><span class="fragment">g</span><span class="fragment">e</span><span class="fragment">s</span></h3>
 					</section>
-				</section>								
+				</section>
+				<section>
+					<section>
+						<h3>Specific Instance of a template</h3>
+						<p class="fragment">Its the specific instance of page containing content</p>
+						<p class="fragment">Should be a functional web page</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Example</h3>
+						<p class="fragment">A page.</p>
+						<img class="fragment" src="images/page1.jpg" style="max-height:400px;" />
+					</section>
+				</section>												
 
 				<section>
 					<section>
-						<h3>Implications</h3>
+						<h3>Why?</h3>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Way of structuring</h3>
+						<p class="fragment">Language independant while providing a way of structuring without spcific naming convetions</p>
+						<p class="fragment">Normalizes file structure so that each type of technology being used uses the same structure</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Segmented code</h3>
+						<p class="fragment">Makes easier to segment code to prevent un-intended interactions either by code or by others programming on the same file</p>
+					</section>
+				</section>						
+				<section>
+					<section>
+						<h3>Defines levels of interactions</h3>
+						<p class="fragment">Each layer deals with specific interactions, and means it should be easier to trace down what is affecting what</p>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<h3>Lets try it out</h3>
+						<h3>Other Implications</h3>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h3>Discussion</h3>
 					</section>
 				</section>
 
