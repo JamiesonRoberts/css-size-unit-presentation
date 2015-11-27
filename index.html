@@ -51,6 +51,34 @@
 				</section>
 				<section>
 					<section>
+						<h2>(Quick)<br/>About Me</h2>
+					</section>
+					<section>
+						<h3>Jamieson Roberts</h3>
+						<p>
+							On twitter and most digital platforms I'm <a href="http://twitter.com/jamiesonroberts">@JamiesonRoberts</a>
+						</p>
+						<p style="font-size:1.5em;">&amp;</p>
+						<p>
+							On most gaming platforms I'm Jedispara
+						</p>
+					</section>
+					<section data-background="#FFF">
+						<img src="./images/jr-badge-logo-large.png" style="max-width: 50%; max-height: 50%; border: none; box-shadow: none;" />
+					</section>
+					<section data-background="#FFF">
+						<img src="./images/MLD-Colour-web.jpg" style="max-width: 50%; max-height: 50%; border: none; box-shadow: none; float: left;" />
+						<img src="./images/ttl-western-logo-trans.gif" style="max-width: 50%; max-height: 50%; border: none; box-shadow: none; float: right" />
+					</section>
+					<section>
+						<img src="./images/pp-weblogo.png" style="max-width: 50%; max-height: 50%; border: none; box-shadow: none;" />
+					</section>
+					<section data-background="#FFF">
+						<img src="./images/arcane.png" style="max-width: 50%; max-height: 50%; border: none; box-shadow: none;" />
+					</section>
+				</section>
+				<section>
+					<section>
 						<blockquote>We’re not designing pages. We’re designing systems of components.</blockquote>
 						<p>- Stephen Hay -</p>
 					</section>
@@ -68,7 +96,7 @@
 						<h2>What Atomic is</h2>
 						<p class="fragment">Atomic design is methodology for organizing and creating systems of components.</p>
 						<p class="fragment">Forces you to think about complexity of components and what is actually influencing other elements.</p>
-						<p class="fragment">Creates a layered approach to force structure, as well as create an easy bridge and bluring between dev and design.</p>
+						<p class="fragment">Creates a layered approach to force structure, as well as create an easier bridge between dev and design with conversation instead of just hand-off.</p>
 						<p class="fragment">Each layer should be standalone</p>
 					</section>
 				</section>
@@ -92,7 +120,6 @@
 				<section>
 					<section>
 						<h3>Example</h3>
-						<p class="fragment">input, label, title</p>
 						<img class="fragment" src="images/atoms.jpg" style="max-height:400px;" />
 					</section>
 				</section>
@@ -111,7 +138,7 @@
 				<section>
 					<section>
 						<h3>Example</h3>
-						<p class="fragment">A search form with a title.</p>
+						<p class="fragment">A search form with a label.</p>
 						<img class="fragment" src="images/molecule.jpg" style="max-height:400px;" />
 					</section>
 				</section>
@@ -125,7 +152,6 @@
 						<h3>Group of molecules</h3>
 						<p class="fragment">Its a group that are joined together and form a relativly complex distinct section of an interface</p>
 						<p class="fragment">Can contain disparate molecules, or the same one repeated</p>
-						<p class="fragment">Header, footer, section</p>
 						<p class="fragment">Should be fully responsive</p>
 					</section>
 				</section>
@@ -187,39 +213,122 @@
 					<section>
 						<h3>Way of structuring</h3>
 						<p class="fragment">Language independant while providing a way of structuring without spcific naming convetions</p>
-						<p class="fragment">Normalizes file structure so that each type of technology being used can use the same structure</p>
+						<p class="fragment">Normalizes file structure so that each type of technology being used could use the file same structure</p>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h3>Segmented code</h3>
 						<p class="fragment">Makes easier to segment code to prevent un-intended interactions either by code or by others programming on the same file</p>
+						<p class="fragment">Especially useful for front-end technology like CSS</p>
 					</section>
 				</section>
 				<section>
 					<section>
 						<h3>Defines levels of interactions</h3>
 						<p class="fragment">Each layer deals with specific interactions, and means it should be easier to trace down what is affecting what</p>
+						<p class="fragment">EG. Organism level deals with the interaction of molecules and specific overrides</p>
+						<p class="fragment">EG. Molecules deal with interactions of those specific atoms that are part of that component</p>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Why this is better than other methodologies?</h2>
-						<p class="fragment"></p>
+						<h2>Why this is 'better' than other methodologies?</h2>
+						<p class="fragment">Its not nessicarily, its your choice!</p>
+						<p class="fragment">Each of them use various aspects of each other</p>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h2>Why this is better than frameworks?</h2>
+						<h2>Why do I like Atomic better than OOCSS, BEM, &amp; SMACCS</h2>
+						<p class="fragment">You don't end up with class and id naming hell.</p>
+						<p class="fragment">EG. .menu .menu__item .menu__item_state_current</p>
+						<p class="fragment">You do end up with clearly defined levels of interaction and scoping of a varied state.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>It doesn't have to be an all or nothing approach</h2>
+						<p class="fragment">There are numerous cross over pieces to the methodology puzzle, and Atomic can fit in, or stand alone.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Why this is 'better' than frameworks?</h2>
 						<small><em>Side note - I hate frameworks.</em></small>
 					</section>
 				</section>
-
-
+				<section>
+					<section>
+						<h2>Frameworks are bulky</h2>
+						<p class="fragment">EG. Bootstrap</p>
+						<table class="fragment">
+							<thead>
+								<tr>
+									<th>File</th>
+									<th>Uncompressed</th>
+									<th>Minified</th>
+									<th>Gzipped</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Bootstrap Core</td>
+									<td>147 KB</td>
+									<td>122 KB</td>
+									<td>20 KB</td>
+								</tr>
+								<tr>
+									<td> </td>
+									<td>2.56s at 56k</td>
+									<td>2.12s at 56k</td>
+									<td>0.3s at 56k</td>
+								</tr>
+								<tr>
+									<td>Custom CSS</td>
+									<td>91 KB</td>
+									<td>67 KB</td>
+									<td>12 KB</td>
+								</tr>
+								<tr>
+									<td> </td>
+									<td>1.58s at 56k</td>
+									<td>1.16s at 56k</td>
+									<td>0.2s at 56k</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Frameworks can chew up a lot of time overwritting code</h2>
+					</section>
+				</section>
+				<section>
+					<section data-background="https://dwpz7qu8szxnd.cloudfront.net/articles/collage.jpg?mtime=20150627170425">
+						<h2 style="background-color: rgba(0,0,0,0.8);">Frameworks lead to lazy design and development</h2>
+						<small style="background-color: rgba(0,0,0,0.8);padding: 1em;">Img source - <a href="https://louderthanten.com/articles/story/design-machines" target="_blank">Design Machines - How to survive the digital apocalypse</a></small>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Frameworks remove the thought process from development</h2>
+						<p class="fragment">Rarther than thinking about context, you can apply that .btnPrimary where ever the hell you want.</p>
+						<p class="fragment">This != good markup, and can also severly degrade accesibilty for anyone using accesibilty devices.</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Frameworks are great...</h2>
+						<p class="fragment">at covering up deficiences in coding skills and/or standards.</p>
+						<p class="fragment">Great for a backend dev needing to make a reasonable page, terrible for a front end dev wanting to create careful and thoughtful code.</p>
+					</section>
+				</section>
 				<section>
 					<section data-background="http://i.giphy.com/vP4ci3sz5YZHi.gif">
 						<h3 class="fragment">Lets play a game</h3>
-						<p class="fragment">Decide what layer it fits into</p>
+						<p class="fragment">Decide what layer each example might fit into</p>
 					</section>
 					<section>
 						<h3>Logo</h3>
